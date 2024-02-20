@@ -3,19 +3,17 @@
  */
 public class Collatz {
 
-    /** Buggy implementation of nextNumber! */
+    /** Corrected implementation of nextNumber. */
     public static int nextNumber(int n) {
-        if (n  == 128) {
-            return 1;
-        } else if (n == 5) {
+        if (n % 2 == 0) { // If n is even
+            return n / 2;
+        } else { // If n is odd
             return 3 * n + 1;
-        } else {
-            return n * 2;
         }
     }
 
     public static void main(String[] args) {
-        int n = 5;
+        int n = 7;
         System.out.print(n + " ");
         while (n != 1) {
             n = nextNumber(n);
@@ -24,4 +22,3 @@ public class Collatz {
         System.out.println();
     }
 }
-
